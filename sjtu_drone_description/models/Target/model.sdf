@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="ghost_box">
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.02</size> <!-- small collision box -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.2</size> <!-- visible bigger box -->
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 1 0 1</diffuse> <!-- green color -->
+          <ambient>0 1 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
