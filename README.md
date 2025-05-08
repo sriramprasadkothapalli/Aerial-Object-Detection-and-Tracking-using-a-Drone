@@ -82,19 +82,19 @@ source install/setup.bash
 
 ### Lauch the SJTU drone
 
-ros2 launch drone_rl drone_rl_start.launch.py
+ros2 launch sjtu_drone_description start_drone_launch.py
 
-### Now the drone is spawned in the environment and now to t ake off the drone
+### Now the drone is spawned in the environment and now to take off the drone
 
 ros2 topic pub /demo/takeoff std_msgs/msg/Empty {}
 
 ### To start the training of PPO
 
-ros2 launch drone_rl start_training.launch.py
+ros2 launch sjtu_drone_description start_training.launch.py
 
-### To test the checkpoint saved, run
+### To open the camera and detect objects using yolov8
 
-ros2 launch drone_rl test.launch.py
+ros2 launch sjtu_drone_description front_cam_detection.py
 
 
 ## 📌 Future Work
