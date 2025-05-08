@@ -31,9 +31,13 @@ Python, OpenCV, PyTorch.
 
 ## ✅ Key Results
 Feature	PX4 Phase	SJTU PPO Phase
+
 Object Detection	YOLOv8 (on video stream)	YOLOv8 (integrated with PPO)
+
 Path Planning	Manual or pre-defined	Learned using PPO
+
 Obstacle Avoidance	Basic	Adaptive & Reward-driven
+
 Integration Complexity	High	Streamlined
 
 ## 🔁 Migration Rationale
@@ -81,7 +85,11 @@ Autonomous landing and multi-drone coordination.
 
 ## 📂 Repository Structure
 ├── px4_phase/          # PX4 SITL-based object detection
+
 ├── sjtu_phase/         # PPO and YOLO integration
+
 ├── models/             # YOLOv8 model files
+
 ├── scripts/            # PPO training and evaluation
+
 ├── README.md
