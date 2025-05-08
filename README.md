@@ -40,15 +40,6 @@ Obstacle Avoidance	Basic	Adaptive & Reward-driven
 
 Integration Complexity	High	Streamlined
 
-## 🔁 Migration Rationale
-Why SJTU?
-
-Unified system for detection and planning.
-
-Efficient PPO integration.
-
-Better real-time performance in dynamic environments.
-
 ## Instructions
 
 ### Phase 1
@@ -73,6 +64,39 @@ Terminal #4:
 cd ~/px4_drone
 python drone_teleop.py
 
+## Phase 2
+
+Clone this repository into your ROS2 workspace
+
+cd ~/ros2_ws/src
+git clone <repository_url>
+
+Navigate to the root of your workspace and build the package
+
+cd ~/ros2_ws
+colcon build 
+
+### Source the workspace
+
+source install/setup.bash
+
+### Lauch the SJTU drone
+
+ros2 launch drone_rl drone_rl_start.launch.py
+
+### Now the drone is spawned in the environment and now to t ake off the drone
+
+ros2 topic pub /demo/takeoff std_msgs/msg/Empty {}
+
+### To start the training of PPO
+
+ros2 launch drone_rl start_training.launch.py
+
+### To test the checkpoint saved, run
+
+ros2 launch drone_rl test.launch.py
+
+
 ## 📌 Future Work
 Real-world hardware testing.
 
@@ -91,5 +115,7 @@ Autonomous landing and multi-drone coordination.
 ├── models/             # YOLOv8 model files
 
 ├── scripts/            # PPO training and evaluation
+
+├── PPO_test_RL.zip/            # Trained Model
 
 ├── README.md
